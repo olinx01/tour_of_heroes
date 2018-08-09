@@ -22,3 +22,11 @@ If you find a problem with this sample's code, please open an [issue][].
 
 [docs repo]: //github.com/dart-lang/site-webdev/tree/master/examples/ng/doc/quickstart
 [issue]: //github.com/dart-lang/site-webdev/issues/new?title=[master]%20examples/ng/doc/quickstart
+
+
+helpful git commands
+curl -u olinx01 https://api.github.com/user/repos -d '{"name": "tour_of_heroes"}' <!-- Remotely create a new repository from the CLI -->
+git init [project-name]
+git add .
+git commit -m 'description message'
+git push -u origin master
