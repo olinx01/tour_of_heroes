@@ -28,5 +28,6 @@ helpful git commands
 curl -u olinx01 https://api.github.com/user/repos -d '{"name": "tour_of_heroes"}' <!-- Remotely create a new repository from the CLI -->
 git init [project-name]
 git add .
+git remote add origin https://github.com/olinx01/tour_of_heroes.git
 git commit -m 'description message'
 git push -u origin master
