@@ -1,14 +1,14 @@
 import 'package:angular/angular.dart';
-import 'package:angular_forms/angular_forms.dart';
 
+import 'src/hero/hero_component.dart';
 import 'src/hero/hero.dart';
 import 'src/hero/mock_heroes.dart';
 
 @Component(
-  selector: 'my-app',
+  selector: 'toh-app',
   templateUrl: 'app_component.html',
   styleUrls: [ 'app_component.css' ],
-  directives: [ coreDirectives, formDirectives ]
+  directives: [ coreDirectives, HeroComponent ]
 )
 class AppComponent {
 
