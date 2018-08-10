@@ -1,6 +1,6 @@
 import 'hero.dart';
 
-final mock_heroes = <Hero>[
+final mockHeroes = <Hero>[
   Hero(11, "Mr. Nice"),
   Hero(12, "Narco"),
   Hero(13, "Bombasto"),

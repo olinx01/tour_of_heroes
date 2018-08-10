@@ -1,23 +1,33 @@
+import 'dart:async';
 import 'package:angular/angular.dart';
 
 import 'src/hero/hero_component.dart';
 import 'src/hero/hero.dart';
-import 'src/hero/mock_heroes.dart';
+import 'src/hero/hero_service.dart';
 
 @Component(
   selector: 'toh-app',
   templateUrl: 'app_component.html',
   styleUrls: [ 'app_component.css' ],
-  directives: [ coreDirectives, HeroComponent ]
+  directives: [ coreDirectives, HeroComponent ],
+  providers: [ ClassProvider(HeroService) ]
 )
-class AppComponent {
+class AppComponent implements OnInit {
 
   String title = "Tour of Heroes";
-
-  List<Hero> heroes = mock_heroes;
-
   Hero selected;
+  List<Hero> heroes;
 
-  void onSelect(Hero hero) => this.selected = hero;
+  final HeroService _heroService;
+
+  AppComponent(this._heroService);
+
+  ngOnInit() => _getHeroes();
+
+  Future<void> _getHeroes() async {
+    heroes = await _heroService.getAllSlowly();
+  }
+
+  void onSelect(Hero hero) => selected = hero;
 
 }
