@@ -1,2 +1,13 @@
-<h1>{{ greeting }}</h1>
-<h2>This is angular!</h2>
+<div class="container">
+    <h1>{{ title }}</h1>
+    <h2>Heroes</h2>
+    <ul class="heroes">
+        <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+            <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+        </li>
+    </ul>
+    <div *ngIf="selected != null" class="detail">
+        <label for="name">{{ selected.id }}</label>
+        <input type="text" name="name" id="name" [(ngModel)]="selected.name" />
+    </div>
+</div>

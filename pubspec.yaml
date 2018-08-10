@@ -1,4 +1,4 @@
-name: angular_app
+name: tour_of_heroes
 description: A web app that uses AngularDart
 version: 0.0.1
 
@@ -7,6 +7,7 @@ environment:
 
 dependencies:
   angular: ^5.0.0
+  angular_forms: ^2.0.0
 
 dev_dependencies:
   angular_test: ^2.0.0
