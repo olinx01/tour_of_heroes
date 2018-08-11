@@ -5,7 +5,7 @@ import 'package:tour_of_heroes/app_component.template.dart' as ng;
 
 import 'main.template.dart' as self;
 
-@GenerateInjector(routerProvidersHash,)
+@GenerateInjector(routerProvidersHash)
 final InjectorFactory injector = self.injector$Injector;
 
 void main() {
