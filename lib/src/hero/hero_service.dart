@@ -5,5 +5,6 @@ import 'mock_heroes.dart';
 class HeroService {
 
   Future<List<Hero>> getAll() async => mockHeroes;
-  Future<List<Hero>> getAllSlowly() async => Future.delayed(Duration(seconds: 100), getAll);
+  Future<List<Hero>> getAllSlowly() async => Future.delayed(Duration(seconds: 1), getAll);
+
 }
