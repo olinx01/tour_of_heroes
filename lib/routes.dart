@@ -3,6 +3,7 @@ import 'package:angular_router/angular_router.dart';
 import 'route_paths.dart';
 import 'src/dashboard/dashboard_component.template.dart' as dashboard_component_template;
 import 'src/hero/hero_list/hero_list_component.template.dart' as hero_list_component_template;
+import 'package:tour_of_heroes/src/hero/hero_detail/hero_detail_component.template.dart' as hero_detail_component_template;
 import 'src/not_found/not_found_component.template.dart' as not_found_component_template;
 
 class Routes {
@@ -22,6 +23,11 @@ class Routes {
     component: hero_list_component_template.HeroListComponentNgFactory
   );
 
+  static final hero = RouteDefinition(
+    routePath: RoutePaths.hero,
+    component: hero_detail_component_template.HeroDetailComponentNgFactory
+  );
+
   static final notFound = RouteDefinition(
     path: '.+',
     component: not_found_component_template.NotFoundComponentNgFactory
@@ -31,6 +37,7 @@ class Routes {
     redirect,
     dashboard,
     heroes,
+    hero,
     notFound
   ];
 
