@@ -1,12 +1,15 @@
 import 'package:angular/angular.dart';
+import 'package:angular_router/angular_router.dart';
 
 import 'package:tour_of_heroes/src/hero/hero.dart';
 import 'package:tour_of_heroes/src/hero/hero_service.dart';
+import 'package:tour_of_heroes/route_paths.dart';
 
 @Component(
   selector: 'toh-dashboard',
   templateUrl: 'dashboard_component.html',
-  directives: [ coreDirectives ],
+  styleUrls: [ 'dashboard_component.css' ],
+  directives: [ coreDirectives, routerDirectives ],
 )
 class DashboardComponent implements OnInit {
 
@@ -20,5 +23,7 @@ class DashboardComponent implements OnInit {
   void ngOnInit() async {
     heroes = (await _heroService.getAllSlowly()).skip(1).take(4).toList();
   }
+
+  String heroUrl(int id) => RoutePaths.hero.toUrl(parameters: {idParam: '$id'});
 
 }

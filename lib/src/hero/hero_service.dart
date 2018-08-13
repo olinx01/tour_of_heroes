@@ -7,6 +7,6 @@ class HeroService {
   Future<Hero> get(int id) async => (await getAllSlowly()).firstWhere((hero) => hero.id == id);
 
   Future<List<Hero>> getAll() async => mockHeroes;
-  Future<List<Hero>> getAllSlowly() async => Future.delayed(Duration(seconds: 1), getAll);
+  Future<List<Hero>> getAllSlowly() async => Future.delayed(Duration(milliseconds: 100), getAll);
 
 }
