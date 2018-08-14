@@ -27,7 +27,19 @@ class HeroListComponent implements OnInit {
   void ngOnInit() async => _getHeroes();
 
   Future<void> _getHeroes() async {
-    heroes = await _heroService.getAllSlowly();
+    heroes = await _heroService.getAll();
+  }
+
+  Future<void> add(String name) async {
+    name = name.trim();
+    if (name.isEmpty) return null;
+    heroes.add(await _heroService.create(name));
+    selected = null;
+  }
+
+  Future<void> delete(Hero hero) async {
+    await _heroService.delete(hero.id);
+    heroes.remove(hero);
   }
 
   void onSelect(Hero hero) => selected = hero;

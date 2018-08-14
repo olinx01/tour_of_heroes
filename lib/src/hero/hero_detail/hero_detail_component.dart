@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
@@ -32,5 +34,10 @@ class HeroDetailComponent implements OnActivate {
   }
 
   void goBack() => _location.back();
+
+  Future<void> save() async {
+    _heroService.update(hero);
+    goBack();
+  }
 
 }
